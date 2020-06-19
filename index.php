@@ -1,5 +1,5 @@
 <?php
-$dsn = 'mysql:dbname=sample_db;host=localhost;';
+$dsn = 'mysql:dbname=test_DB;host=localhost;';
 $user = 'yusuke';
 $password = 'Yusuke0427!';
 try {
