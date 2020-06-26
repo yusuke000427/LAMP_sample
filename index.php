@@ -3,12 +3,21 @@ $dsn = 'mysql:dbname=test_DB;host=localhost;';
 $user = 'Yusuke';
 $password = 'Yusuke0427';
 try {
-	$dbh = new PDO($dsn, $user, $password);
+    $dbh = new PDO($dsn, $user, $password);
+    $dbh->setAttribute(PDO::ATTER_ERRMODE, PDO::ATTER_ERRMODE_EXCPTION);
 
-	$sql = "select * from user;";
-	$result = $dbh->query($sql);
+    $id = $_POST['id'];
+    $name = $_POST['name'];
+    $age = $_POST['age'];
+
+	$sql = "insert into user values (:id, :name, :age)";
+    $result = $dbh->prepare($sql);
+    $prams = array(':id'=> $id, ':name'=> $name, ':age'=> $age,);
+    $stmt->execute($prams);
+
+    header('Location'
 } catch (PDOException $e) {
-	print "Failed: " . $e->getMessage() . "\n";
+	header('Location: index.php?fg=2?err='.$e->getMessage());
 	exit();
 }
 
