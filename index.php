@@ -1,18 +1,17 @@
 <?php
-$dsn = 'mysql:dbname=test_DB;host=localhost;';
-$user = 'Yusuke';
-$password = 'Yusuke0427';
-try {
-    $dbh = new PDO($dsn, $user, $password);
-    print "Success\n";
-    $sql = "select * from user;";
-    $resurt =$dbh->query($sql);
+    $dsn = 'mysql:dbname=test_DB;host=localhost;';
+    $user = 'Yusuke';
+    $password = 'Yusuke0427';
     
-} catch (PDOException $e) {
-    print "Failed: " . $e->getMessage() . "\n";
-    exit();
-}
-   
+    try {
+        $dbh = new PDO($dsn, $user, $password);
+        $sql = "select * from user;";
+        $result = $dbh->query($sql);
+    } catch (PDOException $e) {
+        echo "Setsuzoku Sippai: " . $e->getMessage() . "\n";
+        exit();
+    }
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
