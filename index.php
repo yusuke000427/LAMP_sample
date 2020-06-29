@@ -47,13 +47,22 @@ try {
 			</p>
 		</div>
 	</div>
-
+<div class="container">
 	<?php if($_GET['fg'] == 1) { ?>
-		<p>Success</p>
+		<div class="alert alert-warning alert-dismissible fade show" role="alert">
+		complete.	<strong>Success</strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
 	<?php } else if ($_GET['fg'] == 2) { ?>
-		<p>Failed</p>
+		<div class="alert alert-warning alert-dismissible fade show" role="alert">
+		complete.	<strong>Failed</strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
 	<?php } ?>
-
+</div>
 	<div class="container">
 		<ul class="nav nav-tabs">
 			<li class="nav-item">
